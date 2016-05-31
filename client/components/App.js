@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react';
 import TextArea from './TextArea.js';
-import Button from './button.js';
 import PrevButton from './prevButton.js';
 import NextButton from './nextButton.js';
 import Background from './background.js';
