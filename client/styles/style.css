@@ -6,13 +6,21 @@
 }
 
 .textArea {
-  width: 300px;
+  width: 650px;
   height: 400px;
-  left: 100px;
-  top: 100px;
+  left: 80px;
+  top: 50px;
   border: 1px solid;
   position: absolute;
   z-index: 10;
+}
+
+.leftPage {
+
+}
+
+.rightPage {
+  
 }
 
 .prevButton {  
