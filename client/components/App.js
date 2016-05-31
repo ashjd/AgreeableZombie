@@ -4,6 +4,8 @@ import Button from './button.js';
 import PrevButton from './prevButton.js';
 import NextButton from './nextButton.js';
 import Background from './background.js';
+import leftPage from './leftPage.js';
+import rightPage from './rightPage.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -42,6 +44,8 @@ class App extends React.Component {
       <div>
         <Background />
         <TextArea msg={this.state.msg}/>
+        <leftPage />
+        <rightPage />
         <PrevButton clickHandler={this.onClickPrev.bind(this)}/>
         <NextButton clickHandler={this.onClickNext.bind(this)}/>
       </div>
