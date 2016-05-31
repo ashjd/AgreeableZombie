@@ -3,8 +3,10 @@ import TextArea from './TextArea.js';
 import PrevButton from './prevButton.js';
 import NextButton from './nextButton.js';
 import Background from './background.js';
-import leftPage from './leftPage.js';
-import rightPage from './rightPage.js';
+import LeftPage from './leftPage.js';
+import RightPage from './rightPage.js';
+import Video1 from './video1.js';
+import Video2 from './video2.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -43,10 +45,12 @@ class App extends React.Component {
       <div>
         <Background />
         <TextArea msg={this.state.msg}/>
-        <leftPage />
-        <rightPage />
+        <LeftPage />
+        <RightPage />
         <PrevButton clickHandler={this.onClickPrev.bind(this)}/>
         <NextButton clickHandler={this.onClickNext.bind(this)}/>
+        <Video1 />
+        <Video2 />
       </div>
     );
   }
