@@ -1,6 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import TextArea from './TextArea.js';
 import Button from './button.js';
+import PrevButton from './prevButton.js';
+import NextButton from './nextButton.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,8 +41,8 @@ class App extends React.Component {
       <div>
         <h1> Hello I am App </h1>
         <TextArea msg={this.state.msg}/>
-        <Button clickHandler={this.onClickPrev.bind(this)}/> 
-        <Button clickHandler={this.onClickNext.bind(this)}/> 
+        <PrevButton clickHandler={this.onClickPrev.bind(this)}/>
+        <NextButton clickHandler={this.onClickNext.bind(this)}/>
       </div>
     );
   }
