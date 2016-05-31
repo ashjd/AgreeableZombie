@@ -3,6 +3,7 @@ import TextArea from './TextArea.js';
 import Button from './button.js';
 import PrevButton from './prevButton.js';
 import NextButton from './nextButton.js';
+import Background from './background.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1> Hello I am App </h1>
+        <Background />
         <TextArea msg={this.state.msg}/>
         <PrevButton clickHandler={this.onClickPrev.bind(this)}/>
         <NextButton clickHandler={this.onClickNext.bind(this)}/>

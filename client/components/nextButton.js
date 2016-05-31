@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 
 var NextButton = (props) => (
-  <div className="next-button"> 
+  <div className="nextButton"> 
     <button onClick={props.clickHandler}>Next Page</button>
   </div>  
   );
