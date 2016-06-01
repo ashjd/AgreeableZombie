@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import TextArea from './TextArea.js';
+import Book from './Book.js';
 import PrevButton from './prevButton.js';
 import NextButton from './nextButton.js';
 import Background from './background.js';
@@ -44,7 +44,7 @@ class App extends React.Component {
     return (
       <div>
         <Background />
-        <TextArea msg={this.state.msg}/>
+        <Book msg={this.state.msg}/>
         <LeftPage />
         <RightPage />
         <PrevButton clickHandler={this.onClickPrev.bind(this)}/>

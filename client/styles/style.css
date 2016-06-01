@@ -5,7 +5,7 @@
   z-index: 1;
 }
 
-.textArea {
+.book {
   width: 650px;
   height: 350px;
   left: 80px;
@@ -15,7 +15,7 @@
   z-index: 10;
 }
 
-.leftPage {
+.left-page {
   position: absolute;
   left: 90px;
   top: 60px;
@@ -26,7 +26,7 @@
   text-align: center;
 }
 
-.rightPage {
+.right-page {
   position: absolute;
   left: 440px;
   top: 60px;
@@ -37,7 +37,7 @@
   text-align: center;
 }
 
-.prevButton {  
+.prev-button {  
   left: 200px;
   top: 350px;
   width: 80px;
@@ -47,7 +47,7 @@
   z-index: 15;
 }
 
-.nextButton {
+.next-button {
   left: 500px;
   top: 350px;
   width: 80px;
