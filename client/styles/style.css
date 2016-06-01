@@ -1,69 +1,114 @@
 .background {
-  width: 700px;
-  height: 500px;
+  width: 900px;
+  height: 700px;
   position: relative;
   z-index: 1;
+  background-color: grey;
+  border: 1px solid;
+}
+
+.title {
+  width: 300px;
+  height: 50px;
+  top: 20px;
+  left: 300px;
+  text-align: center;
+  position: absolute;
+  z-index: 20;
+  border: 0.5px solid;
+  background-color: yellow;
 }
 
 .book {
-  width: 650px;
-  height: 350px;
-  left: 80px;
-  top: 50px;
+  width: 780px;
+  height: 400px;
+  left: 70px;
+  top: 80px;
   border: 1px solid;
   position: absolute;
   z-index: 10;
+  background-color: blue;
 }
 
-.left-page {
+.left-page-text {
   position: absolute;
-  left: 90px;
-  top: 60px;
-  width: 280px;
+  left: 100px;
+  top: 100px;
+  width: 320px;
   height: 200px;
   border: 0.5px solid;
   z-index: 13;
   text-align: center;
+  background-color: green;
 }
 
-.right-page {
+.right-page-text {
   position: absolute;
-  left: 440px;
-  top: 60px;
-  width: 280px;
+  left: 490px;
+  top: 100px;
+  width: 320px;
   height: 200px;
   border: 0.5px solid;
   z-index: 13;
   text-align: center;
+  background-color: green;
+}
+
+.left-page-image {
+  position: absolute;
+  left: 100px;
+  top: 300px;
+  width: 320px;
+  height: 150px;
+  border: 0.5px solid;
+  z-index: 13;
+  text-align: center;
+  background-color: aqua;
+}
+
+.right-page-image {
+  position: absolute;
+  left: 490px;
+  top: 300px;
+  width: 320px;
+  height: 150px;
+  border: 0.5px solid;
+  z-index: 13;
+  text-align: center;
+  background-color: aqua;
 }
 
 .prev-button {  
-  left: 200px;
-  top: 350px;
-  width: 80px;
-  height: 30px;
-  border: 1px solid;
+  left: 20px;
+  top: 250px;
   position: absolute;
   z-index: 15;
 }
 
 .next-button {
-  left: 500px;
-  top: 350px;
-  width: 80px;
-  height: 30px;
-  border: 1px solid;
+  left: 865px;
+  top: 250px;
   position: absolute;
   z-index: 15;
+}
+
+.webcam{
+  left:20px;
+  top: 500px;
+  position: absolute;
+  z-index: 20;
+  width: 880px;
+  height: 200px;
+  background-color: red;
 }
 
 .video1 {
   position: absolute;
   z-index: 20;
-  width: 140px;
-  height: 120px;
-  top: 410px;
-  left: 180px;
+  width: 200px;
+  height: 170px;
+  top: 520px;
+  left: 230px;
   border: 0.5px solid;
   background-color: white;
   text-align: center;
@@ -72,9 +117,9 @@
 .video2 {
   position: absolute;
   z-index: 20;
-  width: 140px;
-  height: 120px;
-  top: 410px;
+  width: 200px;
+  height: 170px;
+  top: 520px;
   left: 480px;
   border: 0.5px solid;
   background-color: white;
