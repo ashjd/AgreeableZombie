@@ -1,11 +1,9 @@
 import React, { PropTypes, Component } from 'react';
-
 import Book from './Book.js';
 import Title from './Title.js';
 import PrevButton from './PrevButton.js';
 import NextButton from './NextButton.js';
 import Background from './Background.js';
-
 import LeftPageText from './LeftPageText.js';
 import RightPageText from './RightPageText.js';
 import LeftPageImage from './LeftPageImage.js';
@@ -71,31 +69,38 @@ class App extends React.Component {
     socket.on('prev page', (data) => {
       console.log ('data from server', data);
       this.setState({msg: data.msg});
+      this.setState({pageCounter: data.pageCounter});
     });
 
     socket.on('next page', (data) => {
       this.setState({msg: data.msg});
+      this.setState({pageCounter: data.pageCounter});
     });
   }
   onClickPrev() {
     console.log('Previous Clicked');
-    socket.emit('PrevButtonClick', {msg: 'Previous button clicked'});
     if(this.state.pageCounter-1>=0) {
       this.setState({pageCounter: this.state.pageCounter-2});
+      console.log ('pageCounter before emitting prev' , this.state.pageCounter);
+      socket.emit('PrevButtonClick', {msg: 'Previous button clicked', pageCounter: this.state.pageCounter-2});
+      console.log ('pageCounter after emitting prev' , this.state.pageCounter);
     } else {
-      socket.emit('PrevButtonClick', {msg: "BEGINNING OF BOOK!"});
+      socket.emit('PrevButtonClick', {msg: "BEGINNING OF BOOK!", pageCounter: this.state.pageCounter});
     }
   }
 
   onClickNext() {
     console.log('Next clicked');
-    if (this.state.pageCounter<this.state.bookData.length-1) {
-      // socket.emit('NextButtonClick', {bookData: bookData[pageCounter].image});
+    if (this.state.pageCounter<this.state.bookData.length-1) { 
+
       this.setState({pageCounter: this.state.pageCounter+2});
+      console.log ('pageCounter before emitting next' , this.state.pageCounter);
+      socket.emit('NextButtonClick', {msg: 'Next button clicked', pageCounter: this.state.pageCounter+2});
+      console.log ('pageCounter after emitting next' , this.state.pageCounter);
     } else {
-      socket.emit('NextButtonClick', {msg: "END OF BOOK!"});
+      socket.emit('NextButtonClick', {msg: "END OF BOOK!", pageCounter: this.state.pageCounter});
     }
-    // socket.emit('NextButtonClick', {msg: 'Next button clicked'});
+    
 
   }
 
@@ -104,7 +109,6 @@ class App extends React.Component {
   }
  
   render() {
-    {console.log("Inside render function")}
     return (
       <div>
         <Background />
@@ -115,7 +119,6 @@ class App extends React.Component {
         <LeftPageImage bookData={this.state.bookData} pageCounter={this.state.pageCounter}/>
         <RightPageImage bookData={this.state.bookData} pageCounter={this.state.pageCounter}/>
         <PrevButton clickHandler={this.onClickPrev.bind(this)}/>
-        {console.log("Inside div")}
         <NextButton clickHandler={this.onClickNext.bind(this)}/>
         <Video1 />
         <Video2 />

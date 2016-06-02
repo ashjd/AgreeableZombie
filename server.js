@@ -61,10 +61,11 @@ app.get('/token', function(req, res) {
 io.on('connection', (socket) => {
   console.log('a user connected');
   socket.on('NextButtonClick', function(data) {
-    console.log ('inside server');
+    console.log ('inside server pagecounter next', data.pageCounter);
     io.emit('next page', data);
   });
   socket.on('PrevButtonClick', function(data) {
+    console.log ('inside server pagecounter prev', data.pageCounter);
     io.emit('prev page', data);
   });
   socket.on('disconnect', () => {
