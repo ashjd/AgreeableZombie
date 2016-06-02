@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 html {
   background: url(../assets/background.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -26,7 +25,6 @@ body {
   width: 200px;
 }
 
->>>>>>> 35e7aec95ade54c521645cbe09d65f1d11542d58
 .background {
   width: 900px;
   height: 700px;
@@ -68,10 +66,7 @@ body {
   z-index: 13;
   text-align: center;
   background-color: green;
-<<<<<<< HEAD
-=======
   overflow: scroll;
->>>>>>> 35e7aec95ade54c521645cbe09d65f1d11542d58
 }
 
 .right-page-text {
@@ -84,10 +79,7 @@ body {
   z-index: 13;
   text-align: center;
   background-color: green;
-<<<<<<< HEAD
-=======
   overflow: scroll;
->>>>>>> 35e7aec95ade54c521645cbe09d65f1d11542d58
 }
 
 .left-page-image {
@@ -160,9 +152,9 @@ body {
   border: 0.5px solid;
   background-color: white;
   text-align: center;
-<<<<<<< HEAD
-}
-=======
+
 }
 
->>>>>>> 35e7aec95ade54c521645cbe09d65f1d11542d58
+}
+
+
