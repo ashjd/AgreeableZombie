@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 
 var PrevButton = (props) => (
   <div className="prev-button"> 
-    <button onClick={props.clickHandler}>Prev</button>
+    <input type='button' className='button' value='<' onClick={props.clickHandler}/>
   </div>  
   );
 
