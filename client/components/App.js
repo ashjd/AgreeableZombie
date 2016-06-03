@@ -18,6 +18,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      hoverWord: null,
       msg: 'This is the TextArea.',
       pageCounter: 0, 
       bookTitle: 'The Very Hungry Caterpillar',
@@ -81,27 +82,28 @@ class App extends React.Component {
     console.log('Previous Clicked');
     if(this.state.pageCounter-1>=0) {
       this.setState({pageCounter: this.state.pageCounter-2});
-      socket.emit('PrevButtonClick', {msg: 'Previous button clicked', pageCounter: this.state.pageCounter-2});
+      socket.emit('PrevButtonClick', {msg: 'Previous button clicked', pageCounter: this.state.pageCounter-2, hoverWord: this.state.hoverWord});
     } else {
-      socket.emit('PrevButtonClick', {msg: "BEGINNING OF BOOK!", pageCounter: this.state.pageCounter});
+      socket.emit('PrevButtonClick', {msg: "BEGINNING OF BOOK!", pageCounter: this.state.pageCounter, hoverWord: this.state.hoverWord});
     }
   }
 
   onClickNext() {
     console.log('Next clicked');
     if (this.state.pageCounter<this.state.bookData.length-1) { 
-
       this.setState({pageCounter: this.state.pageCounter+2});
-      socket.emit('NextButtonClick', {msg: 'Next button clicked', pageCounter: this.state.pageCounter+2});
+      socket.emit('NextButtonClick', {msg: 'Next button clicked', pageCounter: this.state.pageCounter+2, hoverWord: this.state.hoverWord});
     } else {
-      socket.emit('NextButtonClick', {msg: "END OF BOOK!", pageCounter: this.state.pageCounter});
-    }
-    
-
+      socket.emit('NextButtonClick', {msg: "END OF BOOK!", pageCounter: this.state.pageCounter, hoverWord: this.state.hoverWord});
+    }  
   }
 
   changeText(event) {
     this.setState ({msg: event.msg});
+  }
+
+  onHover(word) {
+    this.setState({hoverWord: word});
   }
  
   render() {
@@ -110,8 +112,8 @@ class App extends React.Component {
         <Background />
         <Title bookTitle={this.state.bookTitle}/>
         <Book msg={this.state.msg} /> 
-        <LeftPageText bookData={this.state.bookData} pageCounter={this.state.pageCounter}/>
-        <RightPageText bookData={this.state.bookData} pageCounter={this.state.pageCounter}/>
+        <LeftPageText bookData={this.state.bookData} pageCounter={this.state.pageCounter} onHover={this.onHover}/>
+        <RightPageText bookData={this.state.bookData} pageCounter={this.state.pageCounter} onHover={this.onHover}/>
         <LeftPageImage bookData={this.state.bookData} pageCounter={this.state.pageCounter}/>
         <RightPageImage bookData={this.state.bookData} pageCounter={this.state.pageCounter}/>
         <PrevButton clickHandler={this.onClickPrev.bind(this)}/>
