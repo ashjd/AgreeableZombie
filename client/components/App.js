@@ -81,9 +81,7 @@ class App extends React.Component {
     console.log('Previous Clicked');
     if(this.state.pageCounter-1>=0) {
       this.setState({pageCounter: this.state.pageCounter-2});
-      console.log ('pageCounter before emitting prev' , this.state.pageCounter);
       socket.emit('PrevButtonClick', {msg: 'Previous button clicked', pageCounter: this.state.pageCounter-2});
-      console.log ('pageCounter after emitting prev' , this.state.pageCounter);
     } else {
       socket.emit('PrevButtonClick', {msg: "BEGINNING OF BOOK!", pageCounter: this.state.pageCounter});
     }
@@ -94,9 +92,7 @@ class App extends React.Component {
     if (this.state.pageCounter<this.state.bookData.length-1) { 
 
       this.setState({pageCounter: this.state.pageCounter+2});
-      console.log ('pageCounter before emitting next' , this.state.pageCounter);
       socket.emit('NextButtonClick', {msg: 'Next button clicked', pageCounter: this.state.pageCounter+2});
-      console.log ('pageCounter after emitting next' , this.state.pageCounter);
     } else {
       socket.emit('NextButtonClick', {msg: "END OF BOOK!", pageCounter: this.state.pageCounter});
     }
