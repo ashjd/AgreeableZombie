@@ -104,6 +104,7 @@ class App extends React.Component {
 
   onHover(word) {
     this.setState({hoverWord: word});
+    console.log('hoverWord = ', hoverWord);
   }
  
   render() {
