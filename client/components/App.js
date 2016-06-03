@@ -77,14 +77,18 @@ class App extends React.Component {
       this.setState({msg: data.msg});
       this.setState({pageCounter: data.pageCounter});
     });
+
+    socket.on('hoverWord', (data) => {
+      this.setState({hoverWord: data.word});
+    });
   }
   onClickPrev() {
     console.log('Previous Clicked');
     if(this.state.pageCounter-1>=0) {
       this.setState({pageCounter: this.state.pageCounter-2});
-      socket.emit('PrevButtonClick', {msg: 'Previous button clicked', pageCounter: this.state.pageCounter-2, hoverWord: this.state.hoverWord});
+      socket.emit('PrevButtonClick', {msg: 'Previous button clicked', pageCounter: this.state.pageCounter-2});
     } else {
-      socket.emit('PrevButtonClick', {msg: "BEGINNING OF BOOK!", pageCounter: this.state.pageCounter, hoverWord: this.state.hoverWord});
+      socket.emit('PrevButtonClick', {msg: "BEGINNING OF BOOK!", pageCounter: this.state.pageCounter});
     }
   }
 
@@ -102,10 +106,11 @@ class App extends React.Component {
     this.setState ({msg: event.msg});
   }
 
-  onHover(event) {
-    var word = event.target.value();
-    this.setState({hoverWord: word});
-    console.log('hoverWord = ', this.state.hoverWord);
+  onHover(word) {
+    //var word = event.target.value();
+    //this.setState({hoverWord: word});
+    //console.log('hoverWord = ', this.state.hoverWord);
+    socket.emit('Hover', { word: word});
   }
  
   render() {
