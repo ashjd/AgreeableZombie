@@ -92,9 +92,9 @@ class App extends React.Component {
     console.log('Next clicked');
     if (this.state.pageCounter<this.state.bookData.length-1) { 
       this.setState({pageCounter: this.state.pageCounter+2});
-      socket.emit('NextButtonClick', {msg: 'Next button clicked', pageCounter: this.state.pageCounter+2, hoverWord: this.state.hoverWord});
+      socket.emit('NextButtonClick', {msg: 'Next button clicked', pageCounter: this.state.pageCounter+2});
     } else {
-      socket.emit('NextButtonClick', {msg: "END OF BOOK!", pageCounter: this.state.pageCounter, hoverWord: this.state.hoverWord});
+      socket.emit('NextButtonClick', {msg: "END OF BOOK!", pageCounter: this.state.pageCounter});
     }  
   }
 
@@ -102,8 +102,9 @@ class App extends React.Component {
     this.setState ({msg: event.msg});
   }
 
-  onHover(word) {
-    //this.setState({hoverWord: word});
+  onHover(event) {
+    var word = event.target.value();
+    this.setState({hoverWord: word});
     console.log('hoverWord = ', this.state.hoverWord);
   }
  

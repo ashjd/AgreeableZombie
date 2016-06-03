@@ -5,7 +5,7 @@ var LeftPageText = (props) => {
   console.log (words);
   return ( <div className="left-page-text"> 
   { words.map ((word) => 
-     <span onMouseOver={props.onHover(word)}> {word} </span>
+      <span onMouseOver={props.onHover()}> {word} </span> 
     )};
   </div>)
 }
