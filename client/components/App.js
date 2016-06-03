@@ -103,8 +103,8 @@ class App extends React.Component {
   }
 
   onHover(word) {
-    this.setState({hoverWord: word});
-    console.log('hoverWord = ', hoverWord);
+    //this.setState({hoverWord: word});
+    console.log('hoverWord = ', this.state.hoverWord);
   }
  
   render() {
@@ -113,8 +113,8 @@ class App extends React.Component {
         <Background />
         <Title bookTitle={this.state.bookTitle}/>
         <Book msg={this.state.msg} /> 
-        <LeftPageText bookData={this.state.bookData} pageCounter={this.state.pageCounter} onHover={this.onHover}/>
-        <RightPageText bookData={this.state.bookData} pageCounter={this.state.pageCounter} onHover={this.onHover}/>
+        <LeftPageText bookData={this.state.bookData} pageCounter={this.state.pageCounter} onHover={this.onHover.bind(this)}/>
+        <RightPageText bookData={this.state.bookData} pageCounter={this.state.pageCounter} onHover={this.onHover.bind(this)}/>
         <LeftPageImage bookData={this.state.bookData} pageCounter={this.state.pageCounter}/>
         <RightPageImage bookData={this.state.bookData} pageCounter={this.state.pageCounter}/>
         <PrevButton clickHandler={this.onClickPrev.bind(this)}/>
