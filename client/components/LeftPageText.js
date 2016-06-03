@@ -1,30 +1,28 @@
 import React, { PropTypes, Component } from 'react';
 
-// var highlight = function (i, props) {
-//   console.log('MouseOvered Word - ', props.)
-// }
+var highlight = function (word) {
+  console.log('MouseOvered Word - ', word);
+};
 
-// var LeftPageText = (props) => {
-//   var words = props.bookData[props.pageCounter].content.split(' ');
-//   console.log (words);
-//   return ( <div className="left-page-text"> 
-//   { words.map ((word) => 
-//       <span onMouseOver={}> {word} </span> 
-//     )};
-//   </div>)
-// }
+var sendWord = function(word) {
 
-class LeftPageText extends React.Component {
+};
 
-  constructor (props) {
-    super(props);
+var handleMouseOver = function(event) {
+  var word = event.target.value;
+  console.log('MouseOvered Word inside handleMouseOver - ', word);
+  highlight (word);
+  sendWord (word);
+};
 
-    this.words = props.bookData[props.pageCounter].content.split(' ');
-
-    this.state = {
-
-    }
-  }
+var LeftPageText = (props) => {
+  var words = props.bookData[props.pageCounter].content.split(' ');
+  console.log (words);
+  return ( <div className="left-page-text"> 
+  { words.map ((word) => 
+      <span onMouseOver={handleMouseOver.bind(this)}> {word} </span> 
+    )};
+  </div>)
 }
 
 export default LeftPageText;
