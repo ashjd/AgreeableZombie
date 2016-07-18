@@ -1,5 +1,4 @@
-# Amazing Reader App
-
+# Read With Me
 
 ### Installing Dependencies
 
